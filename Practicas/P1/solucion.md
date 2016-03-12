@@ -1,4 +1,4 @@
-## Inicializando el entorno MPI
+## Solución para 1D
 Para inicializar el entorno lo primero que debemos realizar MPI_Init y justo a continuación usar las funciones MPI_Comm_size y MPI_Comm_rank relativas al número de procesos, el comunicador y la id de cada proceso.
 
 	MPI_Init(&argc, &argv);

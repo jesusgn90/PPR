@@ -29,42 +29,32 @@ int Graph::arista(const int ptA,const int ptB)
   return A[ptA*vertices+ptB];
 }
 //***********************************************************************
+void Graph::imprime(){
+  int i,j,vij;
+  for(i=0;i<vertices;i++){
+    cout << "Nodo "<< i << " = ";
+    for(j=0;j<vertices;j++){
+        if (A[i*vertices+j]==INF) 
+          cout << "INF";
+        else  
+          cout << A[i*vertices+j];
+        if (j<vertices-1) 
+          cout << ",";
+        else
+          cout << endl;
+     }
+  }
+}
 void Graph::imprime(bool final){
   if(!final){
     cout << "El coste de ir del nodo i al mismo nodo i es 0" << endl;
     cout << "Si un nodo no puede ir directo a otro nodo su coste es INF" << endl;
     cout << "En esta matriz se indica el coste del viaje directo de un nodo a otros" << endl;
-    int i,j,vij;
-    for(i=0;i<vertices;i++){
-      cout << "Nodo "<< i << " = ";
-      for(j=0;j<vertices;j++){
-          if (A[i*vertices+j]==INF) 
-            cout << "INF";
-          else  
-            cout << A[i*vertices+j];
-          if (j<vertices-1) 
-            cout << ",";
-          else
-            cout << endl;
-       }
-    }
+    imprime();
   }else{
     cout << "En esta matriz se indica el menor coste posible para ir de un" << endl;
     cout << "nodo a otros" << endl;
-    int i,j,vij;
-    for(i=0;i<vertices;i++){
-      cout << "Nodo "<<i << " = ";
-      for(j=0;j<vertices;j++){
-          if (A[i*vertices+j]==INF) 
-            cout << "INF";
-          else  
-            cout << A[i*vertices+j];
-          if (j<vertices-1) 
-            cout << ",";
-          else
-            cout << endl;
-       }
-    }    
+    imprime();    
   }
 }
 //***********************************************************************

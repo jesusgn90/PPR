@@ -14,6 +14,7 @@ class Graph{
     void fija_nverts(const int verts);
     void inserta_arista(const int ptA,const int ptB, const int edge);
     int arista(const int ptA,const int ptB);
+    void imprime();
     void imprime(bool final);
     void lee(char *filename);
     int * getMatriz();

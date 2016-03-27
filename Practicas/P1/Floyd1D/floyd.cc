@@ -29,7 +29,7 @@ int main (int argc, char *argv[]){
         G.lee(argv[1]);
         nverts=G.vertices;
         cout << "EL Grafo de entrada es:"<<endl;
-        G.imprime(false);
+        //G.imprime(false);
         matrizGlobal = G.getMatriz();
     }
     
@@ -51,7 +51,7 @@ int main (int argc, char *argv[]){
     if(id==0){
         cout << endl<<"EL Grafo con las distancias de los caminos más cortos es:"<<endl<<endl;
         G.setMatriz(matrizGlobal);
-        G.imprime(true);
+        //G.imprime(true);
         cout<< "\nTiempo gastado = " << t << endl;
     }
     MPI_Finalize();

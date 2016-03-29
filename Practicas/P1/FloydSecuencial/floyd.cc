@@ -8,12 +8,10 @@ using namespace std;
 
 //**************************************************************************
 
-int main (int argc, char *argv[])
-{
+int main (int argc, char *argv[]){
 MPI::Init(argc,argv);
 
-if (argc != 2) 
-	{
+if (argc != 2){
 	 cerr << "Sintaxis: " << argv[0] << " <archivo de grafo>" << endl;
 	return(-1);
 	}
@@ -27,14 +25,15 @@ int nverts=G.vertices;
 double t=MPI::Wtime();
 // BUCLE PPAL DEL ALGORITMO
 int i,j,k,vikj;
-for(k=0;k<nverts;k++)
-  {
+int cont = 0;
+for(k=0;k<nverts;k++){
    for(i=0;i<nverts;i++)
      for(j=0;j<nverts;j++)
-      if (i!=j && i!=k && j!=k) 
-        {
+      if (i!=j && i!=k && j!=k){
          vikj=G.arista(i,k)+G.arista(k,j);
          vikj=min(vikj,G.arista(i,j));
+         cont++;
+         cout << "entra al bucle " << cont << " veces" << endl;
          G.inserta_arista(i,j,vikj);   
         }
   }
